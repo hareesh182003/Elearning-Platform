@@ -1,0 +1,62 @@
+{% extends 'dummy.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Home E-Learn</title>
+    <link rel="stylesheet" href="{% static 'css/homebl.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+<section class="hero">
+    <h1>Welcome to eLearn</h1>
+    <p>Your gateway to unlimited knowledge</p>
+    <a href="{% url 'courses' %}" class="btn">Explore Courses</a>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <img src="{% static 'images/expert.jpg' %}" alt="Feature 1">
+        <h3>Expert Instructors</h3>
+        <p>Learn from industry leaders and gain real-world skills.</p>
+    </div>
+    <div class="feature">
+        <img src="{% static 'images/flexible.jpg' %}" alt="Feature 2">
+        <h3>Flexible Learning</h3>
+        <p>Access courses anytime, anywhere, on any device.</p>
+    </div>
+    <div class="feature">
+        <img src="{% static 'images/community.jpeg' %}" alt="Feature 3">
+        <h3>Community Support</h3>
+        <p>Join a vibrant community of learners and educators.</p>
+    </div>
+</section>
+
+<!-- New Section: Student Testimonials -->
+<section class="testimonials">
+    <h2>What Our Students Say</h2>
+    <div class="testimonials-container">
+        <div class="testimonial">
+            <p>"eLearn transformed the way I learn. The courses are well-structured and the instructors are top-notch. I landed my dream job in tech thanks to this platform!"</p>
+            <h4>- Sarah L., Web Developer</h4>
+        </div>
+        <div class="testimonial">
+            <p>"I love the flexibility to learn at my own pace. The Data Science course opened up new career opportunities for me!"</p>
+            <h4>- John D., Data Analyst</h4>
+        </div>
+        <div class="testimonial">
+            <p>"The community support at eLearn is incredible. I always feel motivated to keep learning and growing."</p>
+            <h4>- Emily R., Graphic Designer</h4>
+        </div>
+    </div>
+</section>
+
+
+<!-- New Section: Call to Action -->
+<section class="cta">
+    <h2>Ready to Take the Next Step?</h2>
+    <p>Join thousands of learners and start your learning journey with eLearn today!</p>
+    <a href="{% url 'register' %}" class="btn">Sign Up Now</a>
+</section>
+
+{% endblock %}

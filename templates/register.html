@@ -1,0 +1,49 @@
+{% extends 'dummy.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Courses Page</title>
+    <link rel="stylesheet" href="{% static 'css/confirmation.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-6 m-auto">
+            <div class="card mt-3">
+                {% if success %}
+                    <div class="card-header bg-dark text-white text-center">
+                        <h1>SignUp Form</h1>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <h3>{{success}}</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="card-body bg-secondary text-white">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{EUFO.as_p}}
+                            {{EPFO.as_p}}
+                            <input type="submit" value="Register" class="m-auto button-color">
+                        </form>
+                    </div>
+                {% else %}
+                    <div class="card-header bg-dark text-white text-center">
+                        <h1>SignUp Form</h1>               
+                    </div>
+                    <div class="card-body bg-secondary text-white">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{EUFO.as_p}}
+                            {{EPFO.as_p}}
+                            <input type="submit" value="Register" class="m-auto button-color">
+                        </form>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

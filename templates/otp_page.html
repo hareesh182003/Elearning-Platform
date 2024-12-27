@@ -1,0 +1,49 @@
+{% extends 'dummy.html' %}
+{% load static %}
+{% block title %}
+<title>Otp_page</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/button.css' %}">
+<link rel="stylesheet" href="{% static 'css/otp_data.css' %}">
+
+{% endblock %}
+
+{% block body_block %}
+<section class="container-fluid">
+    <div class="otp-container mt-5  ">
+        <h2 style="font-weight: bold; font-size: 1.5rem; text-transform: uppercase;">Enter OTP</h2>
+        <form method="POST" onsubmit="combineOtp()">
+            {% csrf_token %}
+            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
+                <input id="otp1" type="text" name="otp1" maxlength="1" onfocus="this.style.borderColor='#2575fc';"
+                    onblur="this.style.borderColor='#6a11cb';" oninput="allowOnlyNumbers(event);moveToNext(this, 'otp2')" required>
+                <input id="otp2" type="text" name="otp2" maxlength="1" onfocus="this.style.borderColor='#2575fc';"
+                    onblur="this.style.borderColor='#6a11cb';" oninput="allowOnlyNumbers(event);moveToNext(this, 'otp3')" required>
+                <input id="otp3" type="text" name="otp3" maxlength="1" onfocus="this.style.borderColor='#2575fc';"
+                    onblur="this.style.borderColor='#6a11cb';" oninput="allowOnlyNumbers(event);moveToNext(this, 'otp4')" required>
+                <input id="otp4" type="text" name="otp4" maxlength="1" onfocus="this.style.borderColor='#2575fc';"
+                    onblur="this.style.borderColor='#6a11cb';" oninput="allowOnlyNumbers(event);moveToNext(this, 'otp5')" required>
+                <input id="otp5" type="text" name="otp5" maxlength="1" onfocus="this.style.borderColor='#2575fc';"
+                    onblur="this.style.borderColor='#6a11cb';" oninput="allowOnlyNumbers(event);moveToNext(this, 'otp6')" required>
+                <input id="otp6" type="text" name="otp6" maxlength="1" onfocus="this.style.borderColor='#2575fc';"
+                    onblur="this.style.borderColor='#6a11cb';" oninput="allowOnlyNumbers(event);moveToNext(this, '')" required>
+            </div>
+
+            <div id="timer" style="font-weight: bold; color: #2575fc; margin-top: 20px;"></div>
+
+            <input type="hidden" id="otp_combined" name="otp">
+
+            <a href="{% url 'resendOTP' %}" class="me-3">Resend OTP</a>
+
+            <input type="submit" value="Valid OTP" class=" mt-3 rounded-pill me-5 button-color">
+            
+    </div>
+
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'js/otp_code.js' %}"></script>
+<script src="{% static 'js/timer.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,47 @@
+
+.course-details {
+    padding: 2rem;
+}
+
+.course-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.course-header h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+}
+
+.course-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.description, .topics, .enroll {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.topics ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.enroll a {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #007bff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.enroll a:hover {
+    background: #0056b3;
+}

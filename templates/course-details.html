@@ -1,0 +1,40 @@
+{% extends 'dummy.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Courses Page</title>
+    <link rel="stylesheet" href="{% static 'css/courseDp.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+<section class="course-details">
+    <div class="course-header">
+        <h1>{{CO.course_title}}</h1>
+        <p>{{CO.course_subtitle}}</p>
+    </div>
+
+    <div class="course-content">
+        <div class="description">
+            <h2>Course Description</h2>
+            <p>{{CO.course_description}}</p>
+        </div>
+
+        <div class="topics">
+            <h2>What You Will Learn</h2>
+            <ul>
+                {% for i in points %}
+                    <li>{{i}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="enroll">
+            <h2>Enroll Now</h2>
+            <p>Start your journey into {{CO.course_title}} today and build a strong foundation for your future!</p>
+            <a href="{% url 'enrollment' CO.id %}">Enroll in this Course</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

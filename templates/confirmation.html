@@ -1,0 +1,18 @@
+{% extends 'dummy.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Courses Page</title>
+    <link rel="stylesheet" href="{% static 'css/confirmation.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+<section class="confirmation">
+    <h1>Enrollment Successful!</h1>
+    <p>Thank you for enrolling in the Web Development course. We are excited to have you onboard and look forward to guiding you through your learning journey.</p>
+    <p>A confirmation email has been sent to your registered email address with further details.</p>
+    <a href="courses.html">Browse More Courses</a>
+</section>
+
+{% endblock %}

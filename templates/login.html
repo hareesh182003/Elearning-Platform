@@ -1,0 +1,35 @@
+{% extends 'dummy.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Courses Page</title>
+    <link rel="stylesheet" href="{% static 'css/confirmation.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-6 m-auto">
+            <div class="card mt-3">
+                    <div class="card-header bg-dark text-white text-center">
+                        <h1>SignIn Form</h1>               
+                    </div>
+                    <div class="card-body bg-secondary text-center text-white">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ELF.as_p}}
+                            <input type="submit" value="Login" class="rounded-pill me-5 button-color">
+                        </form>
+                        <div class="mt-4 text-center">
+                            <p class="mt-3 text-warning">Don't have an account? <a href="{% url 'register' %}" class="text-white">Signup here</a></p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+</section>
+{% endblock %}

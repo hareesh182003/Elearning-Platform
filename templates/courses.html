@@ -1,0 +1,48 @@
+{% extends 'dummy.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Courses Page</title>
+    <link rel="stylesheet" href="{% static 'css/homebl.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+<section class="courses-section">
+    <h2>Featured Courses</h2>
+    <!-- <div class="courses">
+        <div class="course-card">
+            <h3>Web Development</h3>
+            <p>Master HTML, CSS, and JavaScript.</p>
+            <a href="{% url 'courseDetails' %}">Learn More</a>
+        </div>
+        <div class="course-card">
+            <h3>Data Science</h3>
+            <p>Analyze data and build predictive models.</p>
+            <a href="{% url 'courseDetails' %}">Learn More</a>
+        </div>
+        <div class="course-card">
+            <h3>Graphic Design</h3>
+            <p>Design stunning visuals and graphics.</p>
+            <a href="{% url 'courseDetails' %}">Learn More</a>
+        </div>
+        <div class="course-card">
+            <h3>Graphic Design</h3>
+            <p>Design stunning visuals and graphics.</p>
+            <a href="{% url 'courseDetails' %}">Learn More</a>
+        </div>
+       
+    </div> -->
+
+    <div class="courses">
+        {% for i in CO %}
+            <div class="course-card">
+                <h3>{{i.course_title}}</h3>
+                <p>{{i.course_subtitle}}</p>
+                <a href="{% url 'courseDetails' id=i.id %}">Learn More</a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

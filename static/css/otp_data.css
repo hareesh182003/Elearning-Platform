@@ -1,0 +1,114 @@
+/* OTP Container */
+.otp-container {
+    background: linear-gradient(45deg, #333333, #000000, #1c1c1c);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Heading Styling */
+.otp-container h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Input Field Styling */
+.otp-container input[type="text"] {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 2px solid #6a11cb;
+    border-radius: 5px;
+    color: #6a11cb;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.otp-container input[type="text"]:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 10px rgba(37, 117, 252, 0.8);
+}
+
+/* Button Styling */
+.otp-container button {
+    margin-top: 20px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    font-weight: bold;
+    border: none;   
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.otp-container button:hover {
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #6a11cb, 0 0 40px #2575fc;
+}
+
+.otp-container button:active {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ff758c, 0 0 40px #ff758c;
+}
+
+/* Flex Styling for Input Fields */
+.otp-container div {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+/* Error Container */
+.error-container {
+    background: linear-gradient(45deg, #ff4d4d, #b30000);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+/* Error Message Styling */
+.error-message {
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding-right: 30px; /* Space for the close button */
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #ffcccc;
+}

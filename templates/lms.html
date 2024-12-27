@@ -1,0 +1,65 @@
+{% extends 'dummy.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Courses Page</title>
+    <link rel="stylesheet" href="{% static 'css/lmsv.css' %}">
+{% endblock %}
+{% block body_block %}
+
+<div class="lms-container">
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">My Courses</a></li>
+                <li><a href="#">Assignments</a></li>
+                <li><a href="#">Grades</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </aside>
+
+        <ul>
+            {% for course, videos in courses.items %}
+                <li>
+                    <h3>{{ course|title }}</h3>
+                    <ul>
+                        {% for video in videos %}
+                            <li>
+                                <a href="#" onclick="playVideo('{% static video.url %}')">{{ video.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+        <div id="video-player-container" style="display: none; margin-top: 20px;">
+            <h3>Now Playing:</h3>
+            <video id="video-player" width="640" height="360" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+    </div>
+</div>
+
+<script>
+    // JavaScript function to play the video
+    function playVideo(videoUrl) {
+        const videoPlayerContainer = document.getElementById('video-player-container');
+        const videoPlayer = document.getElementById('video-player');
+
+        // Update the video player's source
+        videoPlayer.querySelector('source').src = videoUrl;
+
+        // Reload the video to reflect the new source
+        videoPlayer.load();
+
+        // Display the video player container
+        videoPlayerContainer.style.display = 'block';
+    }
+</script>
+
+{% endblock %}
